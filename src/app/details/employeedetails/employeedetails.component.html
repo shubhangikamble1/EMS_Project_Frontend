@@ -1,0 +1,61 @@
+<html>
+  <div class="row" style="padding-top: 1%">
+    <div class="col-10">
+      <h3>EMPLOYEE DETAILS</h3>
+    </div>
+    <div class="col-2">
+      <button type="submit" class="btn btn-primary"  routerLink="/dashboard/onboard">Add Employee</button>
+    </div>
+  </div>
+
+  <br />
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>GRADE</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>Date of Joining</th>
+        <th>DOB</th>
+        <th>Exprience</th>
+        <th>Exprience inrange</th>
+        <th>Base Location</th>
+        <th>Current Location</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>    
+      <tr *ngFor="let t of employee">
+        <td>{{t.employeeId}}</td>
+        <td>{{t.employeeName}}</td>
+        <td>{{t.grade}}</td>
+        <td>{{t.mobileNo}}</td>
+        <td><a><u>{{t.email}}</u></a></td>
+        <td>{{t.dateOfJoining}}</td>
+        <td>{{t.dob}}</td>
+        <td>{{t.exprience}}</td>
+        <td>{{t.exprienceRange}}</td>
+        <td>{{t.baseLocation}}</td>
+        <td>{{t.currentLocation}}</td>
+        <td>
+
+          <button type="button" class="btn btn-labeled btn-danger">
+            <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>DEL</button>
+
+            <!-- <a (click)="updateEmployee()">
+              <span class="glyphicon glyphicon-pencil"></span>
+          </a> &nbsp;&nbsp;
+            <a (click)="deleteEmployee()">
+              <span class="glyphicon glyphicon-trash"style="color:red;" ></span>
+            </a> -->
+        </td>
+
+    </tr>
+    </tbody>
+  </table>
+</html>
+<!-- <router-outlet></router-outlet> -->

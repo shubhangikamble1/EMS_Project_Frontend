@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html>
+   <nav class="navbar navbar-dark bg-primary" >
+
+      <h2>EMS</h2>
+    </nav>
+
+  
+<br>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a routerLink="/dashboard/employeedetails">Employee details</a>
+  <a href="/dashboard/employeedet">Feedback</a>
+  <a href="#clients">Report</a>
+  <a href="#contact">Evaluation</a>
+</div>
+
+<div class="main">
+ 
+</div>
+   
+</body>
+</html>
+
+<router-outlet></router-outlet> -->
+
+
+
+<div>
+  <nav class="navbar navbar-dark bg-primary" >
+
+    <h2 style="padding-left: 2%;">EMS Dashboard</h2>
+  </nav>
+<div class="row">
+  <div class="column" style="background-color:aquamarine; padding-left: 1%;">
+    <!-- <ul>
+      <li *ngFor="let item of sidenavList">
+         {{item}} 
+      </li>
+    </ul> -->
+    
+    <a routerLink="/dashboard/employeedetails">Employee details</a><br><br>
+    <a routerLink="/dashboard/employeedet">Feedback</a> <br><br>
+    <a routerLink="#clients">Report</a><br>
+    <a routerLink="#contact">Evaluation</a>
+  </div>
+  <div class="column1" style="background-color:ghostwhite;">
+   
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+</div>

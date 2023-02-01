@@ -1,0 +1,215 @@
+<!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <!-- class named "container" is assigned to div
+  <div class="container">
+    
+    <h1 >ONBOARD NEW EMPLOYEE</h1>
+    <p>Kindly fill in this form to register.</p>
+ 
+         <label for="name"><b>FULL NAME </b></label>
+      
+  <input
+      type="text"
+      placeholder="Enter username"
+      name="username"
+      id="username"
+      #required
+      class="form-control"
+      [(ngModel)]="employee.username" 
+     required #username="ngModel"
+    />
+  
+
+    <label for="name"><b>GRADE </b></label>
+    <input
+      type="text"
+      placeholder="Enter grade"
+      name="grade"
+      id="grade"
+      #required
+      class="form-control"
+      [(ngModel)]="employee.grade" 
+     required #username="ngModel"
+    />
+
+    <label for="mobileno"><b>MOBILE.NO </b></label>
+    <input
+      type="text"
+      placeholder="Enter grade"
+      name="mobileno"
+      id="mobileno"
+      #required
+      class="form-control"
+      [(ngModel)]="employee.grade" 
+     required #username="ngModel"
+    />
+
+    <label for="email"><b>Email</b></label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter Email"
+      name="email"
+      id="email"
+      #required
+    />
+    <label for="doj"><b>DATE OF JOINING</b></label>
+    <input
+      type="date"
+      class="form-control"
+      placeholder="Enter Email"
+      name="doj"
+      id="doj"
+      #required
+    /><br>
+    <label for="baselocation"><b>BASE LOCATION</b></label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter base location"
+      name="baselocation"
+      id="baselocation"
+      #required
+    />
+    <label for="currentlocation"><b>CURRENT LOCATION</b></label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter base location"
+      name="currentlocation"
+      id="currentlocation"
+      #required
+    />
+
+   
+    <button type="submit" class="btn btn-primary">Register</button>
+  </div>
+
+  <div>
+    <p>Already have an account? <a href="/login">Log in</a>.</p>
+  </div>
+</form> -->
+
+<section>
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-center h-10">
+        <div class="col">
+          <div class="card card-registration my-2">
+            <div class="row g-0">
+              <div class="col-xl-12">
+                <div class="card-body p-md-3 text-black">
+                  <h2 class="mb-4 text-uppercase">Employee Registration form</h2>
+                  <form #prof="ngForm" (ngSubmit)="onSubmit()" >
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1m">Employee Full Name</label>
+                        <input type="text" id="employeeName"  name="driverName"  class="form-control form-control-sm" 
+                   [(ngModel)]="employee.employeeName"   />
+                      </div>
+                    </div>
+                      <div class="col-md-6">
+                        <div class="form-outline">
+                          <label class="form-label" for="form3Example1m">Mobileno</label>
+                          <input type="text" id="mobileNo"  name="mobileNo"  class="form-control form-control-sm" 
+                          [(ngModel)]="employee.mobileNo"  />
+                        </div>
+                      </div>
+                   
+                  </div>
+                 
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1n">Grade</label>
+                        <input type="text" id="grade" name="grade"  class="form-control form-control-sm"
+                        [(ngModel)]="employee.grade" />
+                   
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1n1">DOB</label>
+                        <input type="date" id="dob" name="dob"  class="form-control form-control-sm"
+                        [(ngModel)]="employee.dob" />
+                        
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1n">Email Address</label>
+                        <input type="text" id="email" name="email"  class="form-control form-control-sm" 
+                        [(ngModel)]="employee.email"/>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1n1">Date of joining</label>
+                        <input type="date" id="dateOfJoining"  name="dateOfJoining" class="form-control form-control-sm" 
+                        placeholder="MM/DD/YYY" type="date"
+                        [(ngModel)]="employee.dateOfJoining"/>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1n">Base Location</label>
+                        <input type="text" id="baseLocation" name="baseLocation"  class="form-control form-control-sm" 
+                        [(ngModel)]="employee.baseLocation"/>
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1n1">Current Location</label>
+                        <input type="text" id="currentLocation"  name="currentLocation" class="form-control form-control-sm" 
+                        [(ngModel)]="employee.currentLocation"/>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1n">Experience</label>
+                        <input type="text" id="exprience" name="exprience"  class="form-control form-control-sm"
+                        [(ngModel)]="employee.exprience" />
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1n1">Experience in Range</label>
+                        <input type="text" id="exprienceRange"  name="exprienceRange" class="form-control form-control-sm"
+                        [(ngModel)]="employee.exprienceRange" />
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-5">
+                    <div class="col-6 space">
+                    <button class="btn btn-success" type="submit">Add</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-success" type="submit" >Cancel</button>
+                  </div>
+                </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+

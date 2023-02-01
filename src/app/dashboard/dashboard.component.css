@@ -1,0 +1,23 @@
+
+.column {
+  width: 15%;
+  
+  height: 610px;
+}
+.column1 {
+  width: 80%;
+
+  height: 610; 
+}
+
+
+.col-2 {
+  width: 20%;
+  
+  height: 590px;
+}
+.col-8 {
+  width: 80%;
+
+  height: 590px; 
+}

@@ -17,10 +17,10 @@ body
 .loginbox{
 
     width: 420px;
-    height: 420px;
+    height: 440px;
     background:rgb(234, 237, 234);
     color: #fff;
-    top: 40%;
+    top: 50%;
     left: 50%;
     position:absolute;
     transform: translate(-50%, -50%);
@@ -75,6 +75,7 @@ h1{
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
+    padding-top: 1%;
 }
 .loginbox input[type="submit"]:hover
 {
@@ -120,7 +121,7 @@ h1{
 	.icon-camera{
 	position: absolute;
     right: -1px;
-    top: 10px;
+    top: 9pxpx;
     width: 30px;
     height: 30px;
     background-color: #FFF;
@@ -129,4 +130,7 @@ h1{
     align-items: center;
     justify-content: center;
 	}
+  .navbar{
+    background-color: #144358;
+  }
   

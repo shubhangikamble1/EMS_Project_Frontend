@@ -22,17 +22,41 @@ export class EmployeedetailsComponent  implements OnInit{
         console.log(data);
         this.employee=data;
         console.log(this.t)
-        console.log("reponse recived");
+        console.log("response recived");
       },error=>{
         console.log("exception occured");
       }
-  )}
+
+  )
+
+ // this.updateEmployee();
+
+
+ 
+}
 
   add(){
     console.log("ONBOARD")
     this.router.navigateByUrl("/dashboard/onboard");
   }
-  updateEmployee(){}
-  deleteEmployee(){}
+
+  
+
+  updateEmployee(employeeId:number){
+    console.log("update by ID",employeeId);
+    this.router.navigate(['/dashboard/updateEmployeeById',employeeId]);
+  }
+
+
+
+  deleteEmployee(employeeId:number){
+    if(confirm("are you sure deleted "))
+    this.empService.deleteEmplyeeByRemote(employeeId).subscribe(
+     res=>{
+       alert("Record deleted successfully!");
+       this.ngOnInit();
+     })
+
+  }
 
 }

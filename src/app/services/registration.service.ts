@@ -13,7 +13,7 @@ export class RegistrationService {
   }
 
   public loginuserbyremote(reg:any){
-    return this.http.post(`http://localhost:7079/ems/register/loginuser`,reg);
+    return this.http.post(`http://localhost:7079/ems/register/loginuser`,reg,{responseType:"text" as "json"});
   }
   public setUser(user:any){
 

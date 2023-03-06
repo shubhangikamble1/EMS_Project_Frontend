@@ -31,26 +31,28 @@
 <router-outlet></router-outlet> -->
 
 
-
+<app-nav-bar></app-nav-bar>
 <div>
-  <nav class="navbar navbar-dark bg-primary" >
+  <!-- <nav class="navbar"  style="background-color: #144358;">
 
-    <h2 style="padding-left: 2%;">EMS Dashboard</h2>
-  </nav>
+    <h2 style="padding-left: 2%; color: aliceblue">EMS Dashboard</h2>
+  </nav> -->
 <div class="row">
-  <div class="column" style="background-color:aquamarine; padding-left: 1%;">
+  <div class="column" style="background-color: #144358; padding-left: 1%;padding-top: 2%;">
     <!-- <ul>
       <li *ngFor="let item of sidenavList">
          {{item}} 
       </li>
     </ul> -->
     
-    <a routerLink="/dashboard/employeedetails">Employee details</a><br><br>
-    <a routerLink="/dashboard/employeedet">Feedback</a> <br><br>
-    <a routerLink="#clients">Report</a><br>
-    <a routerLink="#contact">Evaluation</a>
+   
+    <b> <a style = "color: #88B4BA" routerLink="/dashboard/employeedetails">Employee details</a></b><br><br>
+    <b> <a style = "color: #88B4BA" routerLink="/dashboard/evaluation">Evaluation</a></b><br><br>
+    <b> <a  style = "color: #88B4BA" routerLink="/dashboard/employeedet">Feedback</a></b> <br><br>
+    <b><a  style = "color: #88B4BA" routerLink="#clients">Report</a> </b><br><br>
+  
   </div>
-  <div class="column1" style="background-color:ghostwhite;">
+  <div class="column1" style="background-color:ghostwhite; height:  80%;">
    
     <router-outlet></router-outlet>
   </div>

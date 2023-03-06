@@ -1,0 +1,43 @@
+
+<html>
+<form  #loginform="ngForm" (ngSubmit)="startEval(employee.employeeId,employee.employeeName)">
+<div style="background-color: #88B4BA;">
+    <div>
+<h1 style="color: black; margin-top: 10px; text-align: center;"><b>EVALUATION DETAILS</b></h1>
+</div>
+<div class="row">
+    <div class="col-md-5" style="padding-left: 20%">
+      <div class="form-outline">
+        <label class="form-label" for="form3Example1m">Employee Id</label>
+        <input type="number" id="employeeId" name="employeeId"  class="form-control form-control-sm" 
+        placeholder="Enter Employee Id"  [(ngModel)]="employee.employeeId "
+       />
+      </div>
+    </div>
+    <div class="col-md-5" style="padding-left: 20%">
+      <div class="form-outline">
+        <label class="form-label" for="form3Example1m">Employee Name</label>
+        <input type="text" id="employeeName"  name="employeeName"  class="form-control form-control-sm" 
+        placeholder="Enter Name"  [(ngModel)]="employee.employeeName"/>
+      </div>
+    </div>
+    <div class="col-md-10" style="padding-left: 22%;padding-top: 5%">
+        <div class="form-outline">
+        
+           <button type="submit"  class="btn btn-success" style="margin-left: 37%;"
+         > Start Evaluation</button>
+
+         
+        </div>
+      </div>
+    </div>
+
+<div class="row" style="padding-top:5%;padding-left:5%;padding-right:4%" >
+    <div class="col-md-4">
+<img src="https://static6.depositphotos.com/1005990/611/i/950/depositphotos_6113790-stock-photo-cartoon-teacher-manager-check-evaluation.jpg" 
+class="img-responsive" style="padding-left:10%;  width:300%; height: 30%;">
+</div>
+</div>
+</div>
+</form>
+</html>

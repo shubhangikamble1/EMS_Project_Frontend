@@ -17,8 +17,8 @@ export class AddemployeeComponent  implements OnInit{
   submitted = false;
   constructor( private formBuilder: FormBuilder,
     private router: Router,private service:EmployeeserviceService){}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
+  
   }
 
   onSubmit(){

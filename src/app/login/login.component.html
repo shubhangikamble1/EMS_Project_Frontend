@@ -1,8 +1,9 @@
 <html lang="en">
-  <nav class="navbar navbar-dark bg-primary" >
+  <!-- <nav class="navbar navbar-dark" >
 
-    <h2>LOGIN</h2>
-  </nav>
+    <h2 style="color: white;">LOGIN</h2>
+  </nav> -->
+ <app-nav-bar-home></app-nav-bar-home>
 <br>
 <head>
   <title>Bootstrap Example</title>
@@ -18,20 +19,12 @@
   <link type="text/css" href="login.component.css">
 </head>
 <style>
-  .backgroundimage {
-  
-    
-    width: 100vw;
-    height: 100vh; 
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    position: absolute
-  }
+ 
 </style>
 
 <body>
   <div class="backgroundimage">
-    <div class="loginbox">
+   <div class="loginbox">
     <div class="text-center image-size-small position-relative">
       <img src="https://annedece.sirv.com/Images/user-vector.jpg" class="rounded-circle p-2 bg-white">
       <div class="icon-camera">
@@ -46,6 +39,7 @@
   <h2>Login</h2> -->
   <form #loginform="ngForm" (ngSubmit)="loginEms()">
     <small class="text-danger">{{msg}}</small>
+    <p>User name</p>
        <input  type="username" class="form-control" placeholder="Enter username" name="username"
        [(ngModel)]="reg.username" 
        required #username="ngModel">
@@ -57,7 +51,7 @@
     <!-- <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div> -->
-    <a href="signup" >Sign up</a>
+      <a href="signup" >Sign up</a>
 
   </form>
   </div>

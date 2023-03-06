@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Employee } from '../model/employee';
+import { Evaluation } from '../model/evaluation';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeserviceService {
-
+ 
+ employee=new Employee();
   constructor(private http:HttpClient) { }
 
   fetchEmployeeDetailsByRemote():Observable<any>{
@@ -17,5 +19,27 @@ export class EmployeeserviceService {
     return this.http.post("http://localhost:7079/ems/employee/onboard-new-employee",employee)
     
   }
+
+  public deleteEmplyeeByRemote(employeeId:number):Observable<any>{
+    return this.http.delete("http://localhost:7079/ems/employee/delete-employee/"+employeeId);
+  }
+
+  //Update by employee Id
+  updateEmployeeById(employeeId:number,employee:Employee):Observable<Employee> {
+    return this.http.put<Employee>("http://localhost:7079/ems/employee/updateEmpById/"+employeeId,employee);
+  }
+
+  //get by employee Id
+  public fetchEmployeeById(employeeId: number):Observable<any> {
+    return this.http.get("http://localhost:7079/ems/employee/get-employee/"+employeeId);
+  }
+
+  public fetchByIdAndName(employeeId:number,employeeName:string):Observable<any>{
+    return this.http.get("http://localhost:7079/ems/employee/serarch-by-id-name/"+employeeId+"/"+employeeName+"/evaluation");
+  }
+  public addEval(employeeId:number,evaluation:Evaluation):Observable<Evaluation>
+  {
+    return this.http.put<Evaluation>("http://localhost:7079/ems/employee/addEvaluation/"+employeeId,evaluation);
+    }
 
 }

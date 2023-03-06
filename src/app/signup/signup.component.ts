@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+
 import { Employee } from '../model/employee';
 import { Registration } from '../model/registration';
 import { RegistrationService } from '../services/registration.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -12,8 +14,8 @@ import { RegistrationService } from '../services/registration.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit{
-  registerForm!: FormGroup;
-  
+  registerForm: FormGroup;
+  errorMessage:string = "";
   registration=new Registration();
   loading = false;
   submitted = false;
@@ -23,13 +25,19 @@ export class SignupComponent implements OnInit{
   }
   ngOnInit(){
     this.registerForm = this.formBuilder.group({
+   
+      username: ['',[ Validators.required,Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      email:['',Validators.required],
+      confirmPassword:[],
     
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+        //validator: ConfirmPasswordValidator("password", "confirmPassword")
+      
   });
   }
   get f() { return this.registerForm.controls; }
  onSubmit(){
+ 
   this.submitted = true;
   this.loading=true;
   this.regservice.addregistration(this.registration).subscribe(
@@ -37,8 +45,8 @@ export class SignupComponent implements OnInit{
     (data:any)=>{
 
       this.submitted = true;
-  this.loading=true;
-      
+     this.loading=true;
+     this.errorMessage = "username already exist";
       alert("Data inserted");
       Swal.fire("Register sucessfully","welcome","success");
       console.log(this.registration.password)
@@ -50,6 +58,29 @@ export class SignupComponent implements OnInit{
     }
 
   )
- 
+  
+}
+register(){
+this.submitted = true;
+  this.loading=true;
+
+  this.regservice.addregistration(this.registration).subscribe(
+    
+    (data:any)=>{
+
+      this.submitted = true;
+     this.loading=true;
+
+      alert("Data inserted");
+      Swal.fire("Register sucessfully","welcome","success");
+      console.log(this.registration.password)
+  this.router.navigateByUrl("/login");
+     
+    },
+    (Error:any)=>{
+      this.router.navigateByUrl("/login");
+    }
+
+  )
 }
 }

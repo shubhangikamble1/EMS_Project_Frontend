@@ -30,60 +30,64 @@
 </form> -->
 
 
-  <nav class="navbar navbar-dark bg-primary">
+<!-- <nav class="navbar navbar-dark bg-primary">
+  <h2>SIGNUP</h2>
+</nav> -->
+<app-nav-bar-home></app-nav-bar-home>
+<br>
+<div class="mb-3">
+  <div class="card ms-auto me-auto p-3 shadow-lg mycustcard">
+     <h2 >Register User</h2>
+     <form  #f = "ngForm" (ngSubmit)="f.form.valid && register()" >
+    
+      <div class="form-froup">
+        <div class="mb-3">
+          <label for="username" class="form-label">UserName</label>
+          <input type="text" id="username" class="form-control col-md-8"
+           name ="username" [(ngModel)]="registration.username" 
+           #username="ngModel" 
+           required minlength="4">
+          <div class="alert alert-danger" *ngIf="!username.valid && f.submitted  && ['minlength'] " >
+              UserName is required max 4 length.
+          </div>
+      </div>
+      </div>
 
-    <h2>SIGNUP</h2>
-  </nav>
-<form #prof="ngForm" (ngSubmit)="onSubmit()">
-    <!-- class named "container" is assigned to div -->
-    <div class="container">
-      
-      <h1>Register</h1>
-      <p>Kindly fill in this form to register.</p>
-      <input
-        type="text"
-        placeholder="Enter username"
-        name="username"
-        id="username"
-        class="form-control"
-        [(ngModel)]="registration.username" 
-       
-      />
-
-      <label for="email"><b>Email</b></label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Enter Email"
-        name="email"
-        id="email"
-        [(ngModel)]="registration.email" 
-      />
-
-      <label for="password"><b>Password</b></label>
-      <input
-        type="password"
-        placeholder="Enter Password"
-        name="password"
-        id="password"
-        [(ngModel)]="registration.password" 
-      />
-
-      <label for="pwd-repeat"><b>Confirm Password</b></label>
-      <input
-        type="password"
-        placeholder="Repeat Password"
-        name="confirmpassword"
-        id="confirmpassword"
-        class="form-control"
-        [(ngModel)]="registration.confirmpassword" 
-      />
-
-      <button type="submit" class="btn btn-primary">Register</button>
+      <div class="form-froup">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" id="email" class="form-control " name ="email" 
+        [(ngModel)]="registration.email" #email="ngModel" required>
+        <div class="alert alert-danger" *ngIf="!email.valid && f.submitted">
+            Email is required.
+        </div>
     </div>
 
-    <div>
-      <p>Already have an account? <a href="/login">Log in</a>.</p>
-    </div>
-  </form>
+      <div class="form-froup">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control"
+           name="password" [(ngModel)]="registration.password"
+            #password="ngModel" required  minlength="6"> 
+          <div class="alert alert-danger" *ngIf="!password.valid && f.submitted && ['minlength']">
+              Password is required.
+          </div>
+      </div>
+      <div class="form-froup mb-3">
+        <label for="confirmPassword" class="form-label">ConfirmPassword</label>
+        <input type="password" id="confirmPassword" class="form-control"
+         name="confirmPassword"
+          [(ngModel)]="registration.confirmPassword" 
+          #confirmPassword="ngModel" required minlength="6">
+        <div class="alert alert-danger" *ngIf="!confirmPassword.valid && f.submitted && ['minlength']">
+          confirmPassword is required.
 
+        </div>
+    </div>
+
+    
+      <button   type="submit" class="btn btn-success w-100 mt-3" style="background-color: #50A057 ;">Sign Up</button>
+
+     </form>
+
+     <a [routerLink]="['/login']" class="btn btn-link" style="color: darkgrey;">I have an account</a>
+  </div>
+</div>

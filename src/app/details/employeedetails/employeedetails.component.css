@@ -2,11 +2,24 @@
     background-color: aliceblue;
     /* margin-left:180px;
     padding-left: 60px; */
-
+    background-position:center;
    
     text-align: center;
-   overflow: auto;
+   overflow: hidden;
+   tab-size:unset;
+   table-layout:unset;
+   width: 100%;
    
+  }
+
+  h3{
+    text-align: center;
+    text-decoration: underline;
+    text-rendering: auto;
+    text-shadow: 0cap;
+    color: #144358;
+    text-transform: capitalize;
+    font-weight: bold;
   }
   
   input[type=text],
@@ -26,7 +39,8 @@
     font-family: Georgia;
     text-align: center;
     font-size: 12px;
-    background-color:  darkseagreen  ;
+    background-color:    #88B4BA ;
+    border: 1px solid black;
     
   }
   
@@ -34,7 +48,8 @@
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     font-size: 16px;
-  
+    border: 1px solid black;
+    size-adjust: inherit;
   
   }
   
@@ -43,7 +58,7 @@
       color: white;
       padding-top: 00px;
       padding-bottom: 00px;
-      padding-left: 550px;
+      padding-left: 330px;
     }
     u{
       color: blue;
